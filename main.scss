@@ -1,0 +1,629 @@
+/*================================== Media Queries ============================*/
+$bp-smallest: 24em; // for 375px
+$bp-small: 37.5em; // for 600px
+$bp-medium: 56.25em; // for 900px
+$bp-large: 75em; // for 1200px
+$bp-largest: 112.5em; // for 1800px
+
+/*================================== Fonts =====================================*/
+$font-primary: 'Poppins', sans-serif;
+
+/*================================== Colors =====================================*/
+
+$color-white: #fff;
+$color-black: #000;
+$color-light: #f9fafb;
+$color-grey-light: #aeb0bf;
+$color-grey-dark:#435452; 
+$color-dark: #11100f;
+$color-primary: #298eb6;
+$color-purple: #624D9a;
+$color-primary-medium: #6f9dee;
+$color-primary-light: #8abafd;
+$color-secondary: #fa064f;
+
+
+/*================================== Center Our Content ===========================*/
+
+.row{
+    max-width: 114rem;
+    margin: 0 auto;
+    @media only screen and (max-width: $bp-large){
+        max-width: 100rem;
+        margin: 0 auto;
+    }
+    @media only screen and (max-width: $bp-medium){
+        max-width: 80rem;
+        margin: 0 auto;
+    }
+    @media only screen and (max-width: $bp-small){
+        max-width: 55rem;
+        margin: 0 auto;
+    }
+    @media only screen and (max-width: $bp-smallest){
+        max-width: 50rem;
+        margin: 0 auto;
+    }
+}
+/*================================== Basic Styling =====================================*/
+
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: $color-grey-dark;
+}
+img{
+    max-width: 100%;
+    height: auto;
+}
+h1,h2,h3,h4,h5{
+    color: $color-dark;
+}
+
+*,
+*:before,
+*:after{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+    @media only screen and (max-width: $bp-large){
+        font-size: 56.25%; //9rem
+    }
+    @media only screen and (max-width: $bp-medium){
+        font-size: 50%; //8rem
+    }
+    @media only screen and (max-width: $bp-small){
+        font-size: 43.75%;//7rem
+    }
+    @media only screen and (max-width: $bp-smallest){
+        font-size: 37.5%; //6rem
+    }
+    
+}
+body{
+    font-family: $font-primary;
+    font-weight: 400;
+    color: $color-grey-dark;
+    line-height: 1.6;
+}
+
+/*================================== Header Starts Here =====================================*/
+.header{
+    &__navigation{
+
+    }
+    &__content{
+
+    }
+    &__flex{
+        display: flex;
+        align-items: center;
+        padding: 8vh 0;
+        @media only screen and (max-width: $bp-small){
+            flex-direction: column;
+        }
+    }
+    &__photo{
+        flex: 1;
+        padding: 10vh 10vw;
+        @media only screen and (max-width: $bp-medium){
+            padding: 0;
+        }
+    }
+    &__textbox{
+        flex: 0 0 50%;
+        padding: 10vh 5vw;
+        @media only screen and (max-width: $bp-small){
+            order: 1;
+            padding: 0;
+        }
+        &--span{
+            color: $color-secondary;
+        }
+        &--para{
+            font-size: 1.4rem;
+            margin: 2rem 0 4rem 0;
+            @media only screen and (max-width: $bp-medium){
+                font-size: 2rem;
+            }
+        }
+    }
+}
+/*================ Logo ================*/
+.logo{
+    font-size: 3rem;
+}
+/*================ Navigation Starts ================*/
+.nav{
+    padding: 2rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media only screen and (max-width: $bp-medium){
+        align-items: flex-start;
+    }
+    &__list{
+        
+        & *:not(:last-child){
+            margin-right: 2rem;
+            @media only screen and (max-width: $bp-medium){
+                margin-bottom: 1rem;
+            }
+        }
+        @media only screen and (max-width: $bp-medium){
+            display: none;
+        }
+    }
+    &__item{
+        display: inline-block;
+        @media only screen and (max-width: $bp-medium){
+            display: block;
+            text-align: center;
+        }
+    }
+    &__link{
+        font-size: 1.6rem;
+        @media only screen and (max-width: $bp-medium){
+            font-size: 2.5rem;
+        }
+        &:hover{
+            color: $color-primary;
+            transition: all .2s;
+        }
+    }
+}
+/*================ Navigation Ends ================*/
+
+/*================ Icons Starts ================*/
+.icon{
+    &__menu{
+        display: none;
+        font-size: 2rem;
+        @media only screen and (max-width: $bp-medium){
+            font-size: 3rem;
+        }
+        @media only screen and (max-width: $bp-medium){
+            display: block;
+        }
+    }
+    &__star{
+        color: yellowgreen;
+        font-size: 1.4rem;
+        &--rate{
+            font-size: 1.2rem;
+        }
+    }
+    &__social{
+        font-size: 3rem;
+        color: $color-primary;
+        cursor: pointer;
+    }
+}
+/*================ Icons Ends ================*/
+
+/*================ Button Starts ================*/
+.btn{
+    display: inline-block;
+    padding: .8rem 1.5rem;
+    &__primary{
+        background-color: $color-primary;
+        color: $color-light;
+        border: 1px solid $color-primary;
+        font-size: 1.5rem;
+        
+        &:hover{
+            color: $color-primary;
+            background-color: $color-light;
+            border: 1px solid $color-primary;
+            transition: all .5s;
+        }
+    }
+    &__light{
+        color: $color-secondary;
+        border: 1px solid $color-secondary;
+        font-size: 1.5rem;
+        margin-right: 1rem;
+        &--top{
+            text-align: right;
+            transform: translateY(-15rem);
+        }
+        &:hover{
+            color: $color-light;
+            background-color: $color-secondary;
+            border: 1px solid $color-secondary;
+            transition: all .5s;
+        }
+    }
+}
+/*================ Button Ends ================*/
+
+/*================ Navigation Ends ================*/
+
+/*================ Headings start ================*/
+.heading-primary{
+    font-size: 6rem;
+    line-height: 1.2;
+    font-weight: 600;
+    &--span{
+        color: $color-secondary;
+    }
+}
+.heading-secondary{
+    font-size: 3.5rem;
+    line-height: 1;
+    font-weight: 500;
+    &__features{
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+    &__watch{
+        text-align: center;
+        margin-bottom: 4rem;
+        color: inherit;
+    }
+    &__product{
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+}
+.heading-tertiary{
+    font-size: 3rem;
+    line-height: 1;
+    font-weight: 600;
+    &__testimonial{
+        text-align: center;
+        margin-bottom: 6rem;
+    }
+}
+/*================ Headings Ends ================*/
+/*================================== Header ends Here =====================================*/
+
+/*================================== Section Features Starts Here =====================================*/
+.features{
+    padding: 5rem 0;
+    &__flex{
+        display: flex;
+        align-items: center;
+        padding: 5rem 0;
+        @media only screen and (max-width: $bp-small){
+            flex-direction: column;
+        }
+        @media only screen and (max-width: $bp-small){
+            & >*:not(:last-child){
+                margin-bottom: 5rem;
+            }
+        }
+    }
+    &__icons{
+        flex: 0 0 20%;
+        text-align: center;
+        padding: 0 5rem;
+        @media only screen and (max-width: $bp-medium){
+            padding: 0;
+        }
+        &--flex{
+            display: flex;
+            flex-direction: column;
+            
+            & >*:not(:last-child){
+                margin-bottom: 8rem;
+            }
+            &-items{
+                
+            }
+        }
+        &--icon{
+            width: 6rem;
+            @media only screen and (max-width: $bp-small){
+                width: 20rem;
+            }
+        }
+        &--name{
+            font-size: 1.2rem;
+            font-weight: 600;
+            @media only screen and (max-width: $bp-medium){
+                font-size: 2rem;
+            }
+        }
+        &--specs{
+            font-size: 1.2rem;
+            @media only screen and (max-width: $bp-medium){
+                font-size: 2rem;
+            }
+        }   
+    }
+    &__photo{
+        flex: 0 0 60%;
+        &--img{
+            display: block;
+            margin: 0 auto;
+        }
+    }
+}
+/*================================== Section Features ends Here =====================================*/
+
+/*================================== Section Watch starts Here =====================================*/
+.watch{
+    background-image: linear-gradient(to right bottom, rgba($color-black, .7), rgba($color-black, .7)), url(../img/watch2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 80vh;
+    color: $color-light;
+    position: relative;
+    &__textbox{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: inherit;
+        padding: 5rem 5rem;
+        text-align: center;
+        @media only screen and (max-width: $bp-medium){
+            padding: 0;
+        }
+        &--para{
+            font-size: 1.4rem;
+            @media only screen and (max-width: $bp-medium){
+                font-size: 1.6rem;
+            }
+        }
+    }
+}
+/*================================== Section Watch ends Here =====================================*/
+
+/*================================== Section Product starts Here =====================================*/
+.product{
+    padding: 10rem 0 5rem 0;
+    &__para{
+        font-size: 1.4rem;
+        text-align: center;
+        padding: 0 10rem;
+        @media only screen and (max-width: $bp-medium){
+            font-size: 1.8rem;
+        }
+    }
+    &__flex{
+        display: flex;
+        align-items: center;
+        padding: 10rem 0;
+        
+        &--disc{
+            flex: 0 0 20%;
+            padding: 0 4rem;
+            @media only screen and (max-width: $bp-medium){
+                padding: 0;
+            }
+            &-flex{
+                display: flex;
+                flex-direction: column;
+                & > *:not(:last-child){
+                    margin-bottom: 6rem;
+                }
+            }
+            &-item{
+
+            }
+            &-name{
+                display: block;
+                padding: .8rem 1.5rem;
+                color: $color-white;
+                font-size: 1.4rem;
+                color: $color-primary;
+                border: 1px solid $color-primary;
+                text-align: center;
+                &:hover{
+                    color: $color-light;
+                    background-color: $color-primary;
+                    border: 1px solid $color-primary;
+                    cursor: pointer;
+                    transition: all .5s;
+                }
+            }
+        }
+        &--photo{
+            flex: 0 0 60%;
+            &-img{
+                display: block;
+                margin: 0 auto;
+            }
+        }
+    }
+}
+/*================================== Section product ends Here =====================================*/
+
+/*================================== Section smart starts Here =====================================*/
+.smart{
+    padding: 5rem 0;
+    &__flex{
+        display: flex;
+        align-items:center;
+        @media only screen and (max-width: $bp-small){
+            flex-direction: column;
+        }
+        &--photo{
+            flex: 0 0 50%;
+            &-img{
+                display: block;
+                margin: 0 auto;
+            }
+        }
+        &--textbox{
+            flex: 1;
+            padding: 0 5vw;
+            & *:not(:last-child){
+                margin-bottom: 2rem;
+            }
+            &-para{
+                font-size: 1.6rem;
+                @media only screen and (max-width: $bp-medium){
+                    font-size: 1.8rem;
+                }
+            }
+            &-save{
+                font-weight: 600;
+                font-size: 1.2rem;
+                color: $color-dark;
+                @media only screen and (max-width: $bp-medium){
+                    font-size: 1.8rem;
+                }
+            }
+            &-span{
+                color: $color-secondary;
+            }
+            &-price{
+                font-weight: 600;
+                font-size: 1.3rem;
+                color: $color-dark;
+                @media only screen and (max-width: $bp-medium){
+                    font-size: 1.8rem;
+                }
+            }
+        }
+    }
+}
+/*================================== Section smart ends Here =====================================*/
+
+/*================================== Section Testimonial starts Here =====================================*/
+.testimonial{
+    padding: 10rem 0;
+    &__flex{
+        display: flex;
+        align-items: center;
+        @media only screen and (max-width: $bp-small){
+            flex-direction: column;
+            & > *:not(:last-child){
+                margin-bottom: 5rem;
+            }
+        }
+        &--textbox{
+            flex: 0 0 50%;
+            padding: 0 5vw;
+            & >*:not(:last-child){
+                margin-bottom: 2rem;
+            }
+            &-para{
+                font-size: 1.4rem;
+                @media only screen and (max-width: $bp-medium){
+                    font-size: 1.8rem;
+                }
+            }
+            &-name{
+                font-size: 2rem;
+                font-weight: 600;
+            }
+        }
+        &--photo{
+            flex: 1;
+            position: relative;
+            &:before{
+                content: '';
+                top: -3rem;
+                right: 10rem;
+                width: 10rem;
+                height: 120%;
+                position: absolute;
+                background-color: $color-secondary;
+                border-top-right-radius: 1rem;
+                border-bottom-right-radius: 1rem;
+                z-index: -1;
+            }
+            &-img{
+                width: 30rem;
+                display: block;
+                margin: 0 auto;
+            }
+        }
+    }
+}
+/*================================== Section Testimonial ends Here =====================================*/
+
+/*================================== Footer starts Here =====================================*/
+.footer{
+    padding: 10rem 0 0 0;
+    &__grid{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+        grid-gap: 3rem;
+        @media only screen and (max-width: $bp-small){
+            grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));  
+        }
+        &--items{
+
+        }
+    }
+    &__nav{
+        &--list{
+            & >*:not(:last-child){
+                margin-bottom: 1rem;
+            }
+        }
+        &--item{
+
+        }
+        &--link{
+            font-size: 1.4rem;
+            @media only screen and (max-width: $bp-medium){
+                font-size: 2.5rem;
+            }
+            &:hover{
+                color: $color-primary;
+                transition: all .2s;
+            }
+            &-heading{
+                color: $color-primary;
+                font-size: 1.6rem;
+                font-weight: 600;
+                @media only screen and (max-width: $bp-medium){
+                    font-size: 3rem;
+                }
+            }
+        }
+    }
+}
+.form{
+    & >*:not(:last-child){
+        margin-bottom: 1rem;
+    }
+    &__group{
+
+    }
+    &__input{
+        padding: .8rem 1.5rem;
+        border: none;
+        outline: none;
+    }
+}
+.footer__copyright{
+    padding: 5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media only screen and (max-width: $bp-small){
+        flex-direction: column;
+        & >*:not(:last-child){
+            margin-bottom: 2rem;
+        }
+    }
+    
+    &--text{
+        font-size: 1.6rem;
+        @media only screen and (max-width: $bp-medium){
+            font-size: 2rem;
+        }
+    }
+    &--icons{
+        & >*:not(:last-child){
+            margin-right: 1.5rem;
+           
+        }
+    }
+}
+/*================================== Footer ends Here =====================================*/
+
